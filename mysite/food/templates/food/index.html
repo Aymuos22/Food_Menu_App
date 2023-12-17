@@ -1,0 +1,85 @@
+{% extends 'food/base.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Food Section</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .item-details {
+            margin-bottom: 20px;
+        }
+
+        .card {
+            height: 200px;
+            width: 200px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            width:100%;
+        }
+
+        .footer-content {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to the Food Section!</h1>
+    <br>
+    <br>
+    {% for item in item_list %}
+    <div class="row item-details">
+        <div class="col-md-3">
+            <img class="card" src="{{ item.item_image }}" alt="{{ item.item_name }}">
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>{{ item.item_name }}</h3>
+                    <h5>{{ item.item_desc }}</h5>
+                    <h6>${{ item.item_price }}</h6>
+                    <h6>{{ item.user_name }}</h6>
+                </div>
+                <div class="col-md-4">
+                    <a href="{% url 'food:detail' item.id %}" class="btn btn-success">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h6>Developed By Soumya Darshan Sukla</h6>
+            <p>Contact me at: suklasoumyadarshan@gmail.com</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+{% endblock %}

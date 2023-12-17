@@ -1,0 +1,8 @@
+.navbar-custom {
+    background-color: #343a40; /* Navbar background color */
+    color: #ffffff; /* Navbar font color */
+}
+
+.nav-link-custom {
+    color: #ffffff !important; /* Navbar link font color */
+}

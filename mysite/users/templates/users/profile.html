@@ -1,0 +1,93 @@
+
+<h1 class="profile-username">{{ user.username }}</h1>
+<div class="profile-details">
+    <div class="profile-image-container">
+        <img class="profile-image" src="{{ user.profile.image.url }}" alt="Profile Image">
+    </div>
+    <div class="profile-info">
+        <p><strong>Location:</strong> {{ user.profile.location }}</p>
+        <p><strong>Description:</strong> {{ user.profile.desc }}</p>
+    </div>
+    <br>
+    <a class="btn btn-success" href="{% url 'edit_profile' %}">Edit</a>
+</div>
+
+<style>
+    .profile-username {
+        color: white; /* Set text color to white */
+        text-decoration: underline; /* Add underline decoration */
+        /* Add any additional styling here */
+    }
+    
+    h1 {
+        background-color: #f9f9f9;
+        color: white; 
+    }
+    
+    body{
+        background-color: #333;
+    }
+.btn-success {
+    background-color: #28a745; /* Change the background color */
+    color: white; /* Text color */
+    border: 1px solid #28a745; /* Border color */
+    padding: 8px 16px; /* Padding around text */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline for links */
+    display: inline-block; /* Display as inline-block element */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+.btn-success:hover {
+    background-color: #218838; /* Darker background color on hover */
+    border-color: #218838; /* Darker border color on hover */
+    color: white; /* Text color on hover */
+}
+
+.profile-username {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.profile-image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-info {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.profile-info strong {
+    color: #555;
+}
+</style>

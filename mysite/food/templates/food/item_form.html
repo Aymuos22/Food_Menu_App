@@ -1,0 +1,79 @@
+{% extends 'food/base.html' %}
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card p-4 shadow">
+                <form method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+
+                    <div class="mb-3">
+                        <label for="{{ form.item_name.id_for_label }}" class="form-label">Item Name</label>
+                        <input type="text" name="{{ form.item_name.name }}" id="{{ form.item_name.id_for_label }}" class="form-control form-control-lg">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.item_desc.id_for_label }}" class="form-label">Description</label>
+                        <input type="text" name="{{ form.item_desc.name }}" id="{{ form.item_desc.id_for_label }}" class="form-control form-control-lg">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.item_price.id_for_label }}" class="form-label">Price</label>
+                        <input type="text" name="{{ form.item_price.name }}" id="{{ form.item_price.id_for_label }}" class="form-control form-control-lg">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.item_image.id_for_label }}" class="form-label">Image URL</label>
+                        <input type="text" name="{{ form.item_image.name }}" id="{{ form.item_image.id_for_label }}" class="form-control form-control-lg">
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    width: 120%; /* Adjust the width */
+    max-width: 800px; /* Set a maximum width if needed */
+    padding: 30px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.shadow {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    text-align: left;
+}
+
+.btn {
+    padding: 10px 30px;
+    font-size: 1.2rem;
+}
+</style>
+{% endblock %}
