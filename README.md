@@ -1,5 +1,6 @@
 ﻿# Food_Menu_App
 The Food Menu App is a user-friendly platform designed to manage a diverse range of food items. Users can effortlessly explore a catalog of delectable dishes, each showcased with detailed descriptions, prices, and images. With intuitive features, it allows seamless addition, editing, and removal of food items, ensuring an up-to-date and enticing menu for customers. Whether it's discovering new culinary delights or managing existing offerings, the Food Menu App streamlines menu management for both customers and administrators
+  
   #Login/Register
   ![image](https://github.com/Aymuos22/Food_Menu_App/assets/126803243/f0d6f391-5442-48f0-981c-7c08eba6979f)
   ![image](https://github.com/Aymuos22/Food_Menu_App/assets/126803243/d37084fd-0734-444c-b781-f95faf0d920f)
